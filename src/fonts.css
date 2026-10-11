@@ -1,0 +1,10 @@
+/* Self-hosted fonts, Hebrew and Latin subsets only (see DESIGN.md section 3) */
+@import "@fontsource/heebo/hebrew-400.css";
+@import "@fontsource/heebo/latin-400.css";
+@import "@fontsource/heebo/hebrew-500.css";
+@import "@fontsource/heebo/hebrew-600.css";
+@import "@fontsource/heebo/latin-600.css";
+@import "@fontsource/heebo/hebrew-700.css";
+@import "@fontsource/frank-ruhl-libre/hebrew-600.css";
+@import "@fontsource/frank-ruhl-libre/latin-600.css";
+@import "@fontsource/frank-ruhl-libre/hebrew-700.css";
