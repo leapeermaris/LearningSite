@@ -44,7 +44,7 @@ export default function Home() {
         eyebrow="למידה ופיתוח ארגוני"
         title="למידה שמזיזה ביצועים, לא רק משתתפים."
         lead="אני בונה לארגונים ולמנהלים תוכניות למידה שנמדדות במה שקורה בעבודה, ולא בכמה אנשים ישבו בכיתה."
-        aside={<Portrait which="hero" className="max-w-[15rem]" />}
+        aside={<Portrait which="hero" sizes="(min-width: 74rem) 17rem, 15rem" className="max-w-[15rem] nav:max-w-[17rem]" />}
       >
         <p className="mb-9 max-w-[35rem] text-lg leading-relaxed">
           אני לאה מריס. יותר מ-15 שנה אני עובדת בתוך ארגונים, בניהול, במשאבי אנוש ובלמידה ארגונית, במגזר הציבורי ובעסקי. היום אני מנהלת למידה

@@ -17,15 +17,16 @@ const fontsCss = `
 body{direction:rtl;font-family:Heebo,sans-serif;color:#0F0E0C;}
 `;
 
-const og = (title, eyebrow) => `<!doctype html><html lang="he" dir="rtl"><head><meta charset="utf-8"><style>${fontsCss}
+const og = (title, eyebrow, photo) => `<!doctype html><html lang="he" dir="rtl"><head><meta charset="utf-8"><style>${fontsCss}
 body{width:1200px;height:630px;background:linear-gradient(120deg,#F3EEE6 0%,#E9E0D2 60%,#D8D3CA 100%);display:flex;flex-direction:column;justify-content:space-between;padding:72px 88px;}
 .brand{font-family:Frank;font-weight:700;font-size:44px;color:#0E1A30}
 .brand span{display:block;font-family:Heebo;font-weight:600;font-size:22px;color:#7A5F30;margin-top:6px;letter-spacing:1px}
 .eyebrow{font-weight:600;font-size:24px;letter-spacing:2px;color:#7A5F30;margin-bottom:18px}
 h1{font-family:Frank;font-weight:600;font-size:${title.length > 40 ? 56 : 66}px;line-height:1.18;color:#0E1A30;max-width:980px}
 .bar{height:6px;width:120px;background:#8C6F3C;border-radius:3px}
+${photo ? `body{padding-left:420px}.photo{position:absolute;left:72px;top:60px;width:300px;height:510px;border-radius:18px;object-fit:cover;object-position:center top;box-shadow:0 18px 44px rgba(30,28,26,.18)}` : ""}
 </style></head><body><div class="brand">לאה מריס<span>ייעוץ ופיתוח ארגוני</span></div>
-<div><div class="eyebrow">${eyebrow}</div><h1>${title}</h1></div><div class="bar"></div></body></html>`;
+<div><div class="eyebrow">${eyebrow}</div><h1>${title}</h1></div><div class="bar"></div>${photo ? `<img class="photo" alt="" src="data:image/webp;base64,${readFileSync(photo).toString("base64")}">` : ""}</body></html>`;
 
 const icon = `<!doctype html><html><head><meta charset="utf-8"><style>${fontsCss}
 body{width:180px;height:180px;background:#0E1A30;display:flex;align-items:center;justify-content:center}
@@ -76,7 +77,7 @@ const shoot = async (html, path, w, h) => {
   await page.screenshot({ path, type: "png" });
 };
 
-await shoot(og("למידה שמזיזה ביצועים, לא רק משתתפים.", "למידה ופיתוח ארגוני"), "public/og/default.png", 1200, 630);
+await shoot(og("למידה שמזיזה ביצועים, לא רק משתתפים.", "למידה ופיתוח ארגוני", resolve("public/images/lea-hero-800.webp")), "public/og/default.png", 1200, 630);
 for (const f of readdirSync("src/content/blog").filter((f) => f.endsWith(".mdx"))) {
   const title = readFileSync(`src/content/blog/${f}`, "utf8").match(/^title: "(.*)"$/m)[1].replace(/\\"/g, '"');
   await shoot(og(title, "תוכן ומאמרים"), `public/og/${f.replace(/\.mdx$/, ".png")}`, 1200, 630);

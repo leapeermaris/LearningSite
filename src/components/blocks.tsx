@@ -116,24 +116,29 @@ export function PlaceholderGate({ isPlaceholder, children }: { isPlaceholder: bo
   return cloneElement(children, { className: clsx(children.props.className, "placeholder-frame") });
 }
 
-export function Portrait({ which, className }: { which: "hero" | "about"; className?: string }) {
+export function Portrait({ which, className, sizes = "(min-width: 74rem) 16rem, 70vw", natural }: { which: "hero" | "about"; className?: string; sizes?: string; natural?: boolean }) {
   const img = IMAGES[which];
+  const eager = which === "hero";
   return (
-    <div className={clsx("relative mx-auto aspect-[4/5] w-full overflow-hidden rounded-[var(--radius-card)] bg-[linear-gradient(150deg,var(--color-beige),var(--color-gray-light))] shadow-[var(--shadow-strong)]", className)}>
-      {img ? (
-        <img
-          src={img.src}
-          width={img.width}
-          height={img.height}
-          alt="לאה מריס, יועצת ללמידה ופיתוח ארגוני"
-          loading={which === "hero" ? "eager" : "lazy"}
-          fetchPriority={which === "hero" ? "high" : undefined}
-          decoding="async"
-          className="size-full object-cover"
-        />
-      ) : (
-        <div aria-hidden="true" className="flex size-full items-center justify-center font-display text-6xl text-gold/60">ל מ</div>
+    <div
+      className={clsx(
+        "relative mx-auto w-full overflow-hidden rounded-[var(--radius-card)] bg-[linear-gradient(150deg,var(--color-beige),var(--color-gray-light))] shadow-[var(--shadow-strong)]",
+        !natural && "aspect-[4/5]",
+        className,
       )}
+    >
+      <img
+        src={img.src}
+        srcSet={img.srcSet}
+        sizes={sizes}
+        width={img.width}
+        height={img.height}
+        alt={img.alt}
+        loading={eager ? "eager" : "lazy"}
+        fetchPriority={eager ? "high" : undefined}
+        decoding="async"
+        className={clsx("w-full object-cover", natural ? "h-auto" : "h-full object-top")}
+      />
     </div>
   );
 }

@@ -109,7 +109,7 @@ export function Header() {
   }, [open]);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-[1000] border-b border-line bg-paper/[0.97]">
+    <header className="fixed inset-x-0 top-0 z-[1000] border-b border-line bg-paper">
       <div className="mx-auto flex max-w-[73.75rem] items-center justify-between gap-6 px-4.5 py-3 sm:px-5 nav:px-8 nav:py-3.5">
         <Link to="/" className="font-display text-[1.625rem] leading-none font-bold tracking-[0.5px] whitespace-nowrap text-ink sm:text-[1.75rem] nav:text-[1.875rem]">
           לאה מריס

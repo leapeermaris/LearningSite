@@ -62,7 +62,7 @@ export default function About() {
               </p>
             </div>
           </div>
-          <Portrait which="about" className="max-w-[16rem] nav:mt-16" />
+          <Portrait which="about" natural sizes="(min-width: 74rem) 26rem, 90vw" className="max-w-[26rem] nav:mt-16" />
         </div>
       </section>
 
