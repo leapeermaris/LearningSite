@@ -2,7 +2,7 @@ import type { Route } from "./+types/managers";
 import { breadcrumbLd, buildMeta, faqLd } from "~/lib/seo";
 import { PERSONAL_SITE_URL } from "~/lib/site";
 import { managerTestimonials } from "~/data/proof";
-import { CtaBand, CtaButton, Faq, PageHero, Reassurance, SectionHead, type FaqItem } from "~/components/blocks";
+import { CtaBand, CtaButton, Faq, FramedPortrait, PageHero, Reassurance, SectionHead, SplitSection, type FaqItem } from "~/components/blocks";
 import { Testimonials } from "~/components/proof";
 import { IconCheck, IconExternal, IconX } from "~/components/Icons";
 
@@ -71,24 +71,28 @@ export default function Managers() {
         eyebrow="למנהלים"
         title="להיכנס לתפקיד בביטחון, ולבנות צוות שמתפתח גם בלעדיך."
         lead="תוכנית פיתוח אישית למנהלים, שמתמקדת במיומנויות שהתפקיד שלך דורש עכשיו, ובכלים שתשתמש בהם כבר בשבוע הבא."
+        aside={<FramedPortrait which="hero" />}
       >
         <CtaButton />
         <Reassurance>30 דקות, ללא התחייבות.</Reassurance>
       </PageHero>
 
-      <section aria-labelledby="moments-title" className="section bg-paper">
-        <div className="container-site">
-          <SectionHead id="moments-title" eyebrow="איפה אתה עכשיו?" title="שלושה רגעים שבהם תוכנית נכונה עושה את ההבדל" />
-          <ul className="grid gap-5 nav:grid-cols-3">
-            {moments.map((m) => (
-              <li key={m.title} className="card card-hover reveal p-7 text-center">
-                <h3 className="mb-3 text-[1.625rem]">{m.title}</h3>
-                <p className="text-base leading-relaxed">{m.text}</p>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
+      <SplitSection
+        id="moments-title"
+        eyebrow="איפה אתה עכשיו?"
+        title="שלושה רגעים שבהם תוכנית נכונה עושה את ההבדל"
+        sub="כל אחד מהם דורש משהו אחר. בפגישת האבחון נבין יחד איפה אתה, ומה הכי חשוב לך עכשיו."
+        className="bg-paper"
+      >
+        <ul className="divide-y divide-line border-y border-line">
+          {moments.map((m) => (
+            <li key={m.title} className="reveal grid gap-2 py-7 sm:grid-cols-[10rem_1fr] sm:gap-8">
+              <h3 className="text-[1.625rem] leading-snug">{m.title}</h3>
+              <p className="text-[1.0625rem] leading-relaxed">{m.text}</p>
+            </li>
+          ))}
+        </ul>
+      </SplitSection>
 
       <section aria-labelledby="program-title" className="section bg-cream">
         <div className="container-site">

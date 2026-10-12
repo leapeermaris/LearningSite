@@ -61,3 +61,25 @@ export const IMAGES: Record<"hero" | "about", Img> = {
     alt: "לאה מריס",
   },
 };
+
+// AI agents Lea built for managers (links from the existing site). They open in Google Gemini.
+export const AGENTS = [
+  {
+    name: "פוקוס",
+    role: "לתעדוף ולניהול זמן",
+    text: "עוזר לך לעשות סדר בעומס, לתעדף משימות ולבנות שבוע עבודה יעיל וממוקד.",
+    href: "https://gemini.google.com/gem/1lHPzrYshpyhZUcicjJOHFbcIQRtPUZP6?usp=sharing",
+  },
+  {
+    name: "ארי",
+    role: "להחלטות ודילמות ניהוליות",
+    text: "יועץ ניהולי לשאלות מורכבות ולהחלטות, עם דילמות ניהוליות ומענה זמין בכל שעה.",
+    href: "https://gemini.google.com/gem/1hgACEdP2dpZqlqlvUcW5d6MwyXmH32oR?usp=sharing",
+  },
+  {
+    name: "מצפן",
+    role: "להכנה לשיחות מורכבות",
+    text: "הכנה לשיחות מורכבות, שיחות משוב ושיחות רגישות עם עובדים, לפני שנכנסים לחדר.",
+    href: "https://gemini.google.com/gem/1HteC4ExBFdKJK1HgJNj6BdeEfAVyUNVE?usp=sharing",
+  },
+] as const;

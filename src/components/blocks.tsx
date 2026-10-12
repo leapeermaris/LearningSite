@@ -4,13 +4,30 @@ import * as Accordion from "@radix-ui/react-accordion";
 import clsx from "clsx";
 import { CONTACT, CTA, IMAGES, SHOW_PLACEHOLDERS } from "~/lib/site";
 
-export function SectionHead({ eyebrow, title, sub, as: H = "h2", className, id }: { eyebrow?: string; title: ReactNode; sub?: ReactNode; as?: "h1" | "h2"; className?: string; id?: string }) {
+export function SectionHead({ eyebrow, title, sub, as: H = "h2", className, id, align = "start" }: { eyebrow?: string; title: ReactNode; sub?: ReactNode; as?: "h1" | "h2"; className?: string; id?: string; align?: "start" | "center" }) {
   return (
-    <div className={clsx("reveal mx-auto mb-10 max-w-[47.5rem] text-center nav:mb-15", className)}>
+    <div className={clsx("reveal mb-10 max-w-[47.5rem] nav:mb-14", align === "center" && "mx-auto text-center", className)}>
       {eyebrow && <span className="eyebrow">{eyebrow}</span>}
-      <H id={id} className="h-section">{title}</H>
-      {sub && <p className="mt-4 text-lg leading-relaxed">{sub}</p>}
+      <H id={id} className="h-section text-balance">{title}</H>
+      {sub && <p className="mt-4 max-w-[42rem] text-lg leading-relaxed">{sub}</p>}
     </div>
+  );
+}
+
+/** Two-column section: heading column on the start side, content on the other. Stacks on mobile. */
+export function SplitSection({ eyebrow, title, sub, id, children, className, aside }: { eyebrow?: string; title: ReactNode; sub?: ReactNode; id: string; children: ReactNode; className?: string; aside?: ReactNode }) {
+  return (
+    <section aria-labelledby={id} className={clsx("section", className)}>
+      <div className="container-site grid gap-10 nav:grid-cols-[0.8fr_1.2fr] nav:gap-20">
+        <div className="reveal nav:sticky nav:top-28 nav:self-start">
+          {eyebrow && <span className="eyebrow">{eyebrow}</span>}
+          <h2 id={id} className="h-section text-balance">{title}</h2>
+          {sub && <p className="mt-5 text-lg leading-relaxed">{sub}</p>}
+          {aside}
+        </div>
+        <div className="min-w-0">{children}</div>
+      </div>
+    </section>
   );
 }
 
@@ -63,7 +80,7 @@ export type FaqItem = { q: string; a: string };
 /** Radix accordion styled like the existing site. Answers stay in the HTML when closed. */
 export function Faq({ items }: { items: FaqItem[] }) {
   return (
-    <Accordion.Root type="single" collapsible className="mx-auto flex max-w-[51.25rem] flex-col gap-3.5">
+    <Accordion.Root type="single" collapsible className="flex max-w-[51.25rem] flex-col gap-3.5">
       {items.map((it, i) => (
         <Accordion.Item key={i} value={`q${i}`} className="card group overflow-hidden hover:border-gold">
           <Accordion.Header asChild>
@@ -90,7 +107,7 @@ export function Faq({ items }: { items: FaqItem[] }) {
 
 export function Timeline({ steps }: { steps: { title: string; text: string }[] }) {
   return (
-    <ol className="relative mx-auto max-w-[47.5rem] before:absolute before:inset-y-0 before:start-[29px] before:w-px before:bg-gray-light">
+    <ol className="relative max-w-[47.5rem] before:absolute before:inset-y-0 before:start-[29px] before:w-px before:bg-gray-light">
       {steps.map((s, i) => (
         <li key={s.title} className="reveal relative mb-10 flex gap-6 last:mb-0 nav:mb-12">
           <span aria-hidden="true" className="z-10 flex size-15 shrink-0 items-center justify-center rounded-full border-[1.5px] border-gold bg-paper font-display text-[1.625rem] font-bold text-ink">
@@ -116,9 +133,9 @@ export function PlaceholderGate({ isPlaceholder, children }: { isPlaceholder: bo
   return cloneElement(children, { className: clsx(children.props.className, "placeholder-frame") });
 }
 
-export function Portrait({ which, className, sizes = "(min-width: 74rem) 16rem, 70vw", natural }: { which: "hero" | "about"; className?: string; sizes?: string; natural?: boolean }) {
+export function Portrait({ which, className, sizes = "(min-width: 74rem) 16rem, 70vw", natural, priority }: { which: "hero" | "about"; className?: string; sizes?: string; natural?: boolean; priority?: boolean }) {
   const img = IMAGES[which];
-  const eager = which === "hero";
+  const eager = priority ?? which === "hero";
   return (
     <div
       className={clsx(
@@ -135,10 +152,20 @@ export function Portrait({ which, className, sizes = "(min-width: 74rem) 16rem, 
         height={img.height}
         alt={img.alt}
         loading={eager ? "eager" : "lazy"}
-        fetchPriority={eager ? "high" : undefined}
+        fetchPriority={which === "hero" && !natural ? "auto" : undefined}
         decoding="async"
         className={clsx("w-full object-cover", natural ? "h-auto" : "h-full object-top")}
       />
+    </div>
+  );
+}
+
+export function FramedPortrait({ which, className }: { which: "hero" | "about"; className?: string }) {
+  const natural = which === "about";
+  return (
+    <div className={clsx("relative mx-auto w-full", natural ? "max-w-[26rem]" : "max-w-[17rem] nav:max-w-[21rem]", className)}>
+      <div aria-hidden="true" className="absolute inset-0 -translate-x-4 translate-y-4 rounded-[var(--radius-card)] border border-gold" />
+      <Portrait which={which} natural={natural} priority sizes={natural ? "(min-width: 74rem) 26rem, 90vw" : "(min-width: 74rem) 21rem, 17rem"} className="relative" />
     </div>
   );
 }

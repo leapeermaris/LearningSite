@@ -1,7 +1,7 @@
 import type { Route } from "./+types/organizations";
 import { breadcrumbLd, buildMeta, faqLd } from "~/lib/seo";
 import { caseStudies } from "~/data/proof";
-import { CtaBand, CtaButton, Faq, PageHero, Reassurance, SectionHead, Timeline, type FaqItem } from "~/components/blocks";
+import { CtaBand, CtaButton, Faq, FramedPortrait, PageHero, Reassurance, SectionHead, SplitSection, Timeline, type FaqItem } from "~/components/blocks";
 import { CaseStudies } from "~/components/proof";
 
 const faq: FaqItem[] = [
@@ -112,27 +112,33 @@ export default function Organizations() {
         eyebrow="לארגונים"
         title="מערך למידה שמשפיע על הביצועים, גם בלי מחלקת הדרכה גדולה."
         lead="לארגונים בינוניים שרוצים מנהלים חזקים יותר, קליטה נכונה לתפקיד, ומישהו מקצועי שמחזיק את תחום הלמידה."
+        aside={<FramedPortrait which="about" />}
       >
         <CtaButton label="לתיאום שיחת היכרות של 30 דקות" />
         <Reassurance>ללא התחייבות. בסוף השיחה תדע אם יש כאן התאמה, ומה הצעד הראשון.</Reassurance>
       </PageHero>
 
-      <section aria-labelledby="pains-title" className="section bg-paper">
-        <div className="container-site">
-          <SectionHead id="pains-title" eyebrow="האתגר" title="שלושה דברים שאני שומעת כמעט בכל ארגון" />
-          <ul className="grid gap-5 nav:grid-cols-3">
-            {pains.map((p) => (
-              <li key={p.title} className="card reveal p-7">
-                <h3 className="mb-3 text-[1.375rem]">{p.title}</h3>
-                <p className="text-base leading-relaxed">{p.text}</p>
-              </li>
-            ))}
-          </ul>
-          <p className="reveal mt-10 text-center font-display text-[1.375rem] font-semibold text-ink nav:text-2xl">
+      <SplitSection
+        id="pains-title"
+        eyebrow="האתגר"
+        title="שלושה דברים שאני שומעת כמעט בכל ארגון"
+        sub="אם אחד מהם נשמע לך מוכר, אתה לא לבד. ויש לזה פתרון."
+        className="bg-paper"
+        aside={
+          <p className="reveal mt-8 font-display text-[1.375rem] font-semibold leading-snug text-ink nav:text-2xl">
             אלה לא בעיות של הדרכה. אלה בעיות של מערך. ומערך אפשר לבנות.
           </p>
-        </div>
-      </section>
+        }
+      >
+        <ul className="divide-y divide-line border-y border-line">
+          {pains.map((p) => (
+            <li key={p.title} className="reveal py-7">
+              <h3 className="mb-2.5 text-[1.5rem]">{p.title}</h3>
+              <p className="text-[1.0625rem] leading-relaxed">{p.text}</p>
+            </li>
+          ))}
+        </ul>
+      </SplitSection>
 
       <section aria-labelledby="services-title" className="section bg-cream">
         <div className="container-site">
@@ -214,12 +220,9 @@ export default function Organizations() {
         </div>
       </section>
 
-      <section aria-labelledby="process-title" className="section bg-paper">
-        <div className="container-site">
-          <SectionHead id="process-title" eyebrow="התהליך" title="מה קורה אחרי שפונים אליי" />
-          <Timeline steps={steps} />
-        </div>
-      </section>
+      <SplitSection id="process-title" eyebrow="התהליך" title="מה קורה אחרי שפונים אליי" sub="חמישה שלבים, כדי שתדע בדיוק למה לצפות. כל שלב נגמר בהחלטה משותפת לגבי הבא." className="bg-paper">
+        <Timeline steps={steps} />
+      </SplitSection>
 
       <CaseStudies items={caseStudies} />
 

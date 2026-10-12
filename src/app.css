@@ -76,13 +76,17 @@
   }
 
   .eyebrow {
-    display: block;
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
     margin-bottom: 1.125rem;
     font-size: 0.8125rem;
     font-weight: 700;
     letter-spacing: 2px;
     color: var(--color-gold-text);
   }
+  .eyebrow::before { content: ""; width: 1.75rem; height: 1px; background: var(--color-gold); flex-shrink: 0; }
+  .text-center .eyebrow, .eyebrow.justify-center { justify-content: center; }
   @media (min-width: 48rem) { .eyebrow { font-size: 0.875rem; } }
   .on-dark .eyebrow { color: var(--color-gold-light); }
 
