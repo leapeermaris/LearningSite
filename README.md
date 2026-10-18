@@ -35,6 +35,7 @@ Deploy previews (לכל PR) מציגים placeholders. האתר החי מסתי�
 | פרטי קשר, תפריט, CTA | `src/lib/site.ts` |
 | מאמר חדש | קובץ `.mdx` חדש ב-`src/content/blog/` עם frontmatter כמו במאמרים הקיימים. העמוד, ה-sitemap והכרטיסים נוצרים אוטומטית |
 | קורס חדש | מוסיפים אובייקט ל-`courses` ב-`src/data/courses.ts`. העמוד מתחלף מרשימת המתנה לקטלוג, ונוצר `/courses/<slug>` |
+| שאלות וטקסטים של כלי הבדיקה | `src/data/learning-check.json` |
 | חיבור טפסים לפלטפורמת דיוור | `src/lib/forms/config.ts`: משנים provider לטופס הרלוונטי |
 | תמונות שיתוף (OG) וה-PDF החינמי | `CHROMIUM_PATH=<נתיב לכרום> node scripts/generate-assets.mjs` |
 

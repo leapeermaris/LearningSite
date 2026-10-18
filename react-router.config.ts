@@ -18,6 +18,7 @@ export default {
       "/about",
       "/blog",
       "/contact",
+      "/learning-check",
       "/accessibility",
       "/privacy",
       "/terms",

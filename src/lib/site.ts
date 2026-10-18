@@ -38,6 +38,7 @@ export const NAV = [
     children: [
       { href: "/blog", label: "מאמרים" },
       { href: "/blog#resource", label: "משאב חינמי להורדה" },
+      { href: "/learning-check", label: "בדיקה: עד כמה הלמידה אצלכם עובדת" },
     ],
   },
   { href: "/contact", label: "צרו קשר" },

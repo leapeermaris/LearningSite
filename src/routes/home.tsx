@@ -388,6 +388,23 @@ export default function Home() {
         </div>
       </section>
 
+
+      {/* Learning check invitation */}
+      <section aria-labelledby="check-title" className="bg-paper pb-16 nav:pb-24">
+        <div className="container-site">
+          <div className="on-dark reveal grid items-center gap-6 rounded-[var(--radius-card)] bg-ink p-8 text-paper sm:p-10 nav:grid-cols-[1fr_auto] nav:gap-12">
+            <div>
+              <span className="eyebrow">בדיקה של 2 דקות</span>
+              <h2 id="check-title" className="mb-3 text-[1.75rem] text-paper nav:text-[2.125rem]">איפה הארגון שלך עומד היום?</h2>
+              <p className="max-w-[40rem] text-[1.0625rem] leading-relaxed text-paper/90">
+                8 שאלות קצרות, ותוצאה מיידית לפי ארבעה תחומים, עם הצעד הראשון שהייתי ממליצה עליו. שום דבר לא נשמר ולא נשלח.
+              </p>
+            </div>
+            <Link to="/learning-check" className="btn btn-light">להתחלת הבדיקה ←</Link>
+          </div>
+        </div>
+      </section>
+
       {/* About teaser */}
       <section aria-labelledby="about-title" className="section bg-cream">
         <div className="container-site grid items-center gap-12 nav:grid-cols-[0.9fr_1.1fr] nav:gap-20">

@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import type { Route } from "./+types/organizations";
 import { breadcrumbLd, buildMeta, faqLd } from "~/lib/seo";
 import { caseStudies } from "~/data/proof";
@@ -223,6 +224,18 @@ export default function Organizations() {
       <SplitSection id="process-title" eyebrow="התהליך" title="מה קורה אחרי שפונים אליי" sub="חמישה שלבים, כדי שתדע בדיוק למה לצפות. כל שלב נגמר בהחלטה משותפת לגבי הבא." className="bg-paper">
         <Timeline steps={steps} />
       </SplitSection>
+
+      <section aria-labelledby="check-title" className="bg-paper pb-16">
+        <div className="container-site">
+          <div className="reveal flex flex-col items-start gap-5 rounded-[var(--radius-card)] border border-line bg-cream p-7 sm:p-8 nav:flex-row nav:items-center nav:justify-between">
+            <div>
+              <h2 id="check-title" className="mb-2 text-[1.5rem]">לא בטוח מאיפה להתחיל?</h2>
+              <p className="text-[1.0625rem] leading-relaxed">בדיקה של 2 דקות תראה לך איזה מארבעת התחומים הכי חלש אצלכם, ומה הצעד הראשון.</p>
+            </div>
+            <Link to="/learning-check" className="btn btn-primary shrink-0">לבדיקה ←</Link>
+          </div>
+        </div>
+      </section>
 
       <CaseStudies items={caseStudies} />
 

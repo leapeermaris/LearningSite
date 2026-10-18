@@ -10,6 +10,7 @@ export default [
   route("blog", "routes/blog.tsx"),
   route("blog/:slug", "routes/post.tsx"),
   route("contact", "routes/contact.tsx"),
+  route("learning-check", "routes/learning-check.tsx"),
   route("accessibility", "routes/accessibility.tsx"),
   route("privacy", "routes/privacy.tsx"),
   route("terms", "routes/terms.tsx"),
