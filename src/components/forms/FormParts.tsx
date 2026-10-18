@@ -7,7 +7,7 @@ import type { FormId } from "~/lib/forms/config";
 export type Status = "idle" | "sending" | "success" | "error";
 
 /** Shared state for every form: validation, submit, focus on first error, live status. */
-export function useLeadForm(formId: FormId, validate: (v: FormValues) => Record<string, string>) {
+export function useLeadForm(formId: FormId, validate: (v: FormValues) => Record<string, string>, transform?: (v: FormValues) => FormValues) {
   const [status, setStatus] = useState<Status>("idle");
   const [errors, setErrors] = useState<Record<string, string>>({});
   const formRef = useRef<HTMLFormElement>(null);
@@ -33,7 +33,7 @@ export function useLeadForm(formId: FormId, validate: (v: FormValues) => Record<
     }
     setStatus("sending");
     try {
-      await submitForm(formId, values);
+      await submitForm(formId, transform ? transform(values) : values);
       setStatus("success");
     } catch {
       setStatus("error");

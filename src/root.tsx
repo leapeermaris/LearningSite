@@ -9,6 +9,7 @@ import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { WhatsAppFab } from "./components/WhatsAppFab";
 import { AccessibilityWidget } from "./components/AccessibilityWidget";
+import { BookingProvider } from "./components/Booking";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preload", href: heeboHebrew400, as: "font", type: "font/woff2", crossOrigin: "anonymous" },
@@ -65,7 +66,7 @@ function useReveal() {
 function Shell({ children }: { children: React.ReactNode }) {
   useReveal();
   return (
-    <>
+    <BookingProvider>
       <Header />
       <main id="main-content" tabIndex={-1} className="outline-none">
         {children}
@@ -75,7 +76,7 @@ function Shell({ children }: { children: React.ReactNode }) {
         <WhatsAppFab />
         <AccessibilityWidget />
       </aside>
-    </>
+    </BookingProvider>
   );
 }
 

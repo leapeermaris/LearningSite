@@ -19,7 +19,7 @@ node scripts/check-links.mjs   # בדיקת קישורים שבורים באתר
 
 1. ב-Netlify: **Add new site → Import from Git**, ובוחרים את הריפו. ההגדרות נקראות מ-`netlify.toml`.
 2. **חשוב:** ב-**Site configuration → Forms** להפעיל **Form detection**. בלי זה הטפסים לא יקבלו פניות.
-3. ב-**Forms → Form notifications** להוסיף התראת מייל ל-Leapeermaris@gmail.com לכל טופס (contact, newsletter, waitlist, resource).
+3. ב-**Forms → Form notifications** להוסיף התראת מייל ל-Leapeermaris@gmail.com לכל טופס (booking, newsletter, waitlist, resource).
 4. שם האתר ב-Netlify קובע את הכתובת. אם הוא שונה מ-`lea-maris-learning`, להגדיר משתנה סביבה `VITE_SITE_URL` עם הכתובת המלאה (משמש ל-canonical, sitemap ו-OG).
 5. דומיין משלך בהמשך: מחברים ב-**Domain management**, ומעדכנים את `VITE_SITE_URL`.
 
@@ -33,6 +33,7 @@ Deploy previews (לכל PR) מציגים placeholders. האתר החי מסתי�
 | המלצות, מקרי בוחן, מספרים, לוגואים | `src/data/proof.ts`: מחליפים את הטקסט ומשנים `placeholder: false` |
 | תמונות של לאה | שמים את הקבצים ב-`public/images/` ומעדכנים את `IMAGES` ב-`src/lib/site.ts` |
 | פרטי קשר, תפריט, CTA | `src/lib/site.ts` |
+| חלון תיאום השיחה (וואטסאפ, טלפון, טופס) | `src/components/Booking.tsx` |
 | מאמר חדש | קובץ `.mdx` חדש ב-`src/content/blog/` עם frontmatter כמו במאמרים הקיימים. העמוד, ה-sitemap והכרטיסים נוצרים אוטומטית |
 | קורס חדש | מוסיפים אובייקט ל-`courses` ב-`src/data/courses.ts`. העמוד מתחלף מרשימת המתנה לקטלוג, ונוצר `/courses/<slug>` |
 | שאלות וטקסטים של כלי הבדיקה | `src/data/learning-check.json` |

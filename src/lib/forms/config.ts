@@ -8,7 +8,7 @@
  *
  * Mailing platform not chosen yet (TODO.md), so every form uses Netlify Forms for now.
  */
-export type FormId = "contact" | "newsletter" | "waitlist" | "resource";
+export type FormId = "booking" | "newsletter" | "waitlist" | "resource";
 
 export type FormTarget =
   | { provider: "netlify" }
@@ -16,7 +16,7 @@ export type FormTarget =
   | { provider: "webhook"; endpoint: string };
 
 export const formsConfig: Record<FormId, FormTarget> = {
-  contact: { provider: "netlify" },
+  booking: { provider: "netlify" }, // intro call: name, phone, time, phone or Zoom
   newsletter: { provider: "netlify" },
   waitlist: { provider: "netlify" },
   resource: { provider: "netlify" },

@@ -3,6 +3,9 @@ import { Link } from "react-router";
 import * as Accordion from "@radix-ui/react-accordion";
 import clsx from "clsx";
 import { CONTACT, CTA, IMAGES, SHOW_PLACEHOLDERS } from "~/lib/site";
+import { CtaButton } from "./Booking";
+
+export { CtaButton };
 
 export function SectionHead({ eyebrow, title, sub, as: H = "h2", className, id, align = "start" }: { eyebrow?: string; title: ReactNode; sub?: ReactNode; as?: "h1" | "h2"; className?: string; id?: string; align?: "start" | "center" }) {
   return (
@@ -45,10 +48,6 @@ export function PageHero({ eyebrow, title, lead, children, aside }: { eyebrow: s
       </div>
     </section>
   );
-}
-
-export function CtaButton({ label = CTA.label, className }: { label?: string; className?: string }) {
-  return <Link to={CTA.href} className={clsx("btn btn-primary", className)}>{label}</Link>;
 }
 
 export function Reassurance({ children = CTA.reassurance, className }: { children?: ReactNode; className?: string }) {

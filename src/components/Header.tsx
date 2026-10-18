@@ -1,7 +1,8 @@
 import { useEffect, useId, useRef, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router";
 import clsx from "clsx";
-import { CTA, NAV } from "~/lib/site";
+import { NAV } from "~/lib/site";
+import { CtaButton } from "./Booking";
 
 type NavItem = (typeof NAV)[number];
 
@@ -151,9 +152,7 @@ export function Header() {
               ),
             )}
             <li className="mt-3 nav:mt-0">
-              <Link to={CTA.href} className="btn btn-primary w-full !px-5.5 !py-2.5 text-[0.8125rem] nav:w-auto">
-                {CTA.label}
-              </Link>
+              <CtaButton className="w-full !px-5.5 !py-2.5 text-[0.8125rem] nav:w-auto" />
             </li>
           </ul>
         </nav>

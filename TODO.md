@@ -49,7 +49,7 @@
 ## פריסה (Netlify)
 - [ ] לחבר את הריפו ב-Netlify (הוראות ב-README.md)
 - [ ] **להפעיל Form detection** ב-Site configuration → Forms. בלי זה הטפסים לא עובדים
-- [ ] להגדיר התראות מייל לטפסים
+- [ ] להגדיר התראות מייל לטפסים (booking, newsletter, waitlist, resource). **booking** הוא החשוב: שם, טלפון, שעה נוחה, טלפון או זום
 - [ ] אם שם האתר ב-Netlify שונה מ-lea-maris-learning: להגדיר `VITE_SITE_URL`
 - [ ] אחרי העלייה: לשלוח טופס בדיקה מכל אחד מארבעת הטפסים, ולהגיש את sitemap.xml ל-Google Search Console
 
