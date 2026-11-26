@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>לאה מריס · יועצת ארגונית ומלווה מנהלים</title>
-<meta name="description" content="מחברת בין אנשים, תהליכים ובינה מלאכותית, כדי לבנות שיטות עבודה שמחזירות לך שליטה על היום. מעל 15 שנות ניסיון במשאבי אנוש, פיתוח ארגוני והובלת שינוי.">
+<meta name="description" content="לאה מריס, ייעוץ ארגוני, פיתוח, למידה והדרכה. לא כל צורך דורש הדרכה: מאבחנת את הבעיה, בונה תוכנית עבודה מותאמת ומלווה ליישום. יותר מ-15 שנות ניסיון במגזר הציבורי והעסקי.">
 <meta name="theme-color" content="#0E1A30">
 <link rel="canonical" href="https://lea-maris-card.netlify.app/">
 <meta property="og:type" content="profile">
@@ -135,6 +135,7 @@
   .ornament::before, .ornament::after { content: ""; width: 48px; height: 1px; background: currentColor; opacity: .6; }
   .ornament i { width: 7px; height: 7px; transform: rotate(45deg); border: 1px solid currentColor; }
   .lead {
+    margin-top: 12px;
     font-family: var(--serif);
     font-size: 1.28rem;
     line-height: 1.5;
@@ -244,21 +245,20 @@
   .quote footer { margin-top: 10px; font-size: .85rem; color: var(--muted); }
   .quote footer b { color: var(--ink); font-weight: 500; }
 
-  .links { display: grid; gap: 10px; }
+  .links { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
   .link {
-    display: flex; align-items: center; gap: 14px;
-    padding: 14px 16px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
+    padding: 16px 6px;
     border: 1px solid var(--line);
-    border-radius: 14px;
-    background: var(--white);
-    transition: border-color .25s ease, background .25s ease;
+    border-radius: 16px;
+    background: var(--cream);
+    text-align: center;
+    transition: border-color .25s ease, background .25s ease, transform .25s ease;
   }
-  .link:hover { border-color: var(--gold); background: var(--cream); }
+  .link:hover { border-color: var(--gold); background: var(--white); transform: translateY(-2px); }
   .link .ic { color: var(--gold); display: grid; place-items: center; }
-  .link b { display: block; font-weight: 500; color: var(--ink); font-size: 1rem; }
-  .link small { display: block; color: var(--muted); font-size: .82rem; direction: ltr; text-align: right; }
-  .link .arrow { margin-inline-start: auto; color: var(--gold); }
-  .link .arrow svg { width: 18px; height: 18px; }
+  .link .ic svg { width: 26px; height: 26px; }
+  .link b { font-weight: 500; color: var(--ink); font-size: .92rem; }
 
   .closing {
     margin: 36px 20px 0;
@@ -358,7 +358,6 @@
 
   <div class="identity">
     <h1 class="reveal" style="--d:2">לאה מריס</h1>
-    <div class="ornament reveal" style="--d:3" aria-hidden="true"><i></i></div>
     <p class="lead reveal" style="--d:4">מאבחנת את הבעיה, בונה תוכנית עבודה מותאמת ומלווה ליישום</p>
   </div>
 
@@ -369,7 +368,7 @@
     <a class="q reveal" style="--d:6" href="tel:+972505700534" aria-label="חיוג: 050-570-0534">
       <span class="ic"><svg aria-hidden="true"><use href="#i-phone"/></svg></span>חיוג
     </a>
-    <a class="q reveal" style="--d:7" href="mailto:Leapeermaris@gmail.com" aria-label="מייל: Leapeermaris@gmail.com">
+    <a class="q reveal" style="--d:7" href="mailto:leamaris.od@gmail.com" aria-label="מייל: leamaris.od@gmail.com">
       <span class="ic"><svg aria-hidden="true"><use href="#i-mail"/></svg></span>מייל
     </a>
     <a class="q reveal" style="--d:8" href="https://lea-maris-ai-consulting.lovable.app/" target="_blank" rel="noopener" aria-label="לאתר (נפתח בחלון חדש)">
@@ -388,22 +387,22 @@
 
   <section class="block about scroll-reveal" aria-labelledby="about-h">
     <p class="eyebrow">נעים להכיר</p>
-    <h2 id="about-h">שליטה על היום. צוות שלוקח אחריות. ביטחון בהחלטות.</h2>
-    <p>אני לאה מריס, יועצת ארגונית ומלווה מנהלים. אני מחברת בין אנשים, תהליכים ובינה מלאכותית, כדי לבנות <strong>שיטות עבודה שמחזירות לך שליטה על היום</strong>, מפתחות צוות שלוקח אחריות ומייצרות ביטחון בקבלת החלטות.</p>
-    <p>פתרונות מותאמים אישית, מבוססים על מעל 15 שנות ניסיון במשאבי אנוש, פיתוח ארגוני והובלת תהליכי שינוי.</p>
+    <p class="kicker">אחרי יותר מ-15 שנה בלמידה והדרכה, למדתי:</p>
+    <h2 id="about-h" class="big">לא כל צורך דורש <em>הדרכה.</em></h2>
+    <p>אני לאה מריס. כבר יותר מ-15 שנה אני עוסקת בלמידה, הדרכה ופיתוח ארגוני, במגזר הציבורי ובמגזר העסקי.</p>
+    <p>ארגונים רבים משקיעים בהדרכות זמן, כסף ומשאבים. אבל מה קורה אחרי? איך יודעים אם משהו באמת השתנה, ואם ההשקעה הייתה נכונה מלכתחילה?</p>
+    <p>לפעמים התשובה היא קורס, ולפעמים דווקא ליווי, חניכה, התנסות, שינוי בתהליך או שיחה נכונה. לכן, לפני שמשקיעים בעוד הדרכה, אני מתחילה בשלב שלא מעט ארגונים מדלגים עליו: <strong>להבין מה באמת צריך להשתנות.</strong></p>
   </section>
 
   <div class="stats scroll-reveal" role="list" aria-label="במספרים">
     <div class="stat" role="listitem"><b dir="ltr">15+</b><span>שנות ניסיון בארגונים</span></div>
-    <div class="stat" role="listitem"><b>3</b><span>תחומים: HR, פיתוח ארגוני ו-AI</span></div>
+    <div class="stat" role="listitem"><b>3</b><span>תחומים: למידה, הדרכה ופיתוח ארגוני</span></div>
     <div class="stat" role="listitem"><b>2</b><span>מגזרים: ציבורי ועסקי</span></div>
   </div>
 
   <section class="block scroll-reveal" aria-labelledby="way-h">
     <p class="eyebrow">איך אני עובדת</p>
-    <p class="kicker">אחרי יותר מ-15 שנה בלמידה והדרכה, למדתי:</p>
-    <h2 id="way-h" class="big">לא כל צורך דורש <em>הדרכה.</em></h2>
-    <p class="way-intro">לפעמים התשובה היא קורס, ולפעמים דווקא ליווי, חניכה, התנסות, שינוי בתהליך או שיחה נכונה. לכן אני תמיד מתחילה באבחון.</p>
+    <h2 id="way-h">תמיד מתחילים באבחון</h2>
     <ol class="steps">
       <li><b>מבינים יחד</b> מה קורה בארגון</li>
       <li><b>מזהים את הפער</b> ומה באמת צריך להשתנות</li>
@@ -448,28 +447,22 @@
     <h2 id="links-h" class="sr-only">קישורים</h2>
     <div class="links">
       <a class="link" href="https://www.linkedin.com/in/lea-maris-9131b94a" target="_blank" rel="noopener">
-        <span class="ic"><svg aria-hidden="true"><use href="#i-li"/></svg></span>
-        <span><b>לינקדאין</b><small>linkedin.com/in/lea-maris</small></span>
-        <span class="arrow"><svg aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        <span class="ic"><svg aria-hidden="true"><use href="#i-li"/></svg></span><b>לינקדאין</b>
         <span class="sr-only">(נפתח בחלון חדש)</span>
       </a>
       <a class="link" href="https://www.instagram.com/leamaris" target="_blank" rel="noopener">
-        <span class="ic"><svg aria-hidden="true"><use href="#i-ig"/></svg></span>
-        <span><b>אינסטגרם</b><small>@leamaris</small></span>
-        <span class="arrow"><svg aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        <span class="ic"><svg aria-hidden="true"><use href="#i-ig"/></svg></span><b>אינסטגרם</b>
         <span class="sr-only">(נפתח בחלון חדש)</span>
       </a>
       <a class="link" href="https://lea-maris-ai-consulting.lovable.app/" target="_blank" rel="noopener">
-        <span class="ic"><svg aria-hidden="true"><use href="#i-globe"/></svg></span>
-        <span><b>האתר שלי</b><small>lea-maris-ai-consulting.lovable.app</small></span>
-        <span class="arrow"><svg aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        <span class="ic"><svg aria-hidden="true"><use href="#i-globe"/></svg></span><b>האתר שלי</b>
         <span class="sr-only">(נפתח בחלון חדש)</span>
       </a>
     </div>
   </section>
 
   <section class="closing scroll-reveal" aria-labelledby="close-h">
-    <h2 id="close-h">נתחיל בשיחה של 30 דקות</h2>
+    <h2 id="close-h">נתחיל בשיחת היכרות</h2>
     <p>נבין יחד מה קורה אצלך ומה ייתן את התוצאה הכי גדולה.</p>
     <a class="btn btn-primary" href="https://wa.me/972505700534?text=%D7%94%D7%99%D7%99%20%D7%9C%D7%90%D7%94%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%AA%D7%90%D7%9D%20%D7%A9%D7%99%D7%97%D7%AA%20%D7%94%D7%99%D7%9B%D7%A8%D7%95%D7%AA%20%D7%A9%D7%9C%2030%20%D7%93%D7%A7%D7%95%D7%AA" target="_blank" rel="noopener">
       <svg aria-hidden="true"><use href="#i-wa"/></svg>כתבו לי בוואטסאפ
@@ -482,9 +475,8 @@
   </div>
 
   <footer class="foot">
-    <span class="mono">ל · מ</span>
-    לאה מריס · ייעוץ ופיתוח ארגוני<br>
-    <a href="tel:+972505700534" dir="ltr">050-570-0534</a> · <a href="mailto:Leapeermaris@gmail.com">Leapeermaris@gmail.com</a>
+    לאה מריס · ייעוץ ארגוני, פיתוח, למידה והדרכה<br>
+    <a href="tel:+972505700534" dir="ltr">050-570-0534</a> · <a href="mailto:leamaris.od@gmail.com">leamaris.od@gmail.com</a>
   </footer>
 </main>
 
