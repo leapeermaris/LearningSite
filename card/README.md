@@ -3,10 +3,10 @@
 דף עצמאי, בלי בנייה. כל מה שבתיקייה הזו עולה כמו שהוא.
 
 ## העלאה ל-Netlify
-**הכי מהיר:** גוררים את התיקייה `card` אל https://app.netlify.com/drop ואז ב-Site configuration משנים את שם האתר ל-`lea-maris-card`.
+**הכי מהיר:** גוררים את התיקייה `card` אל https://app.netlify.com/drop ואז ב-Site configuration משנים את שם האתר ל-`leamaris`.
 **מהריפו:** Add new site → Import from Git, עם **Base directory = `card`**, Build command ריק, Publish directory = `card`.
 
-אם שם האתר שונה מ-`lea-maris-card`, צריך לעדכן את הכתובת ב-`index.html` (canonical, og:url, og:image) כדי שהתצוגה המקדימה בוואטסאפ תעבוד.
+אם שם האתר שונה מ-`leamaris`, צריך לעדכן את הכתובת ב-`index.html` (canonical, og:url, og:image) כדי שהתצוגה המקדימה בוואטסאפ תעבוד.
 
 ## טופס השארת פרטים (חובה, פעם אחת)
 הטופס עובד דרך Netlify Forms:
