@@ -221,7 +221,7 @@
     display: grid; place-items: center;
     background: var(--white); color: var(--gold); border: 1px solid var(--line);
   }
-  .svc h3 { font-family: var(--serif); font-size: 1.12rem; font-weight: 700; color: var(--ink); line-height: 1.3; }
+  .svc h3 { font-family: var(--serif); font-size: 1.12rem; font-weight: 400; color: var(--ink); line-height: 1.3; }
   .svc p { font-size: .93rem; color: var(--muted); line-height: 1.55; margin-top: 3px; }
 
   .kicker { font-size: .95rem; color: var(--muted); margin-bottom: 4px; }
@@ -475,13 +475,12 @@
     <p class="eyebrow">נעים להכיר</p>
     <h2 id="about-h" class="big">הדבר הכי <em class="draw">יקר</em> בלמידה ארגונית הוא פתרון שלא ענה על הצורך.</h2>
     <p>אני רואה את זה כל הזמן: משקיעים זמן, כסף ואנרגיה, אבל בפועל שום דבר לא קורה.</p>
-    <p>לכן הדבר הראשון שאני בודקת הוא מה קורה בארגון שלך, מה כבר קיים ומה רוצים שיהיה, ו<strong>מה יעבוד אצלך בפועל</strong>. משם ממשיכים יחד, יד ביד 🤝</p>
-    <a class="inline-cta" href="#contact">אם זה מדבר אליך, אשמח לשמוע ממך <span aria-hidden="true">👇</span></a>
+    <p>לכן הדבר הראשון שאני בודקת הוא מה קורה בארגון שלך, מה כבר קיים ומה רוצים שיהיה, ו<strong>מה יעבוד אצלך בפועל</strong>. משם ממשיכים יחד, יד ביד.</p>
   </section>
 
   <div class="stats scroll-reveal" role="list" aria-label="במספרים">
     <div class="stat" role="listitem"><b dir="ltr">15+</b><span>שנות ניסיון בארגונים</span></div>
-    <div class="stat" role="listitem"><b>3</b><span>תחומים: למידה, הדרכה ופיתוח ארגוני</span></div>
+    <div class="stat" role="listitem"><b>3</b><span>תחומים: ייעוץ ופיתוח ארגוני, למידה, הדרכה</span></div>
     <div class="stat" role="listitem"><b>2</b><span>מגזרים: ציבורי ועסקי</span></div>
   </div>
 
@@ -506,7 +505,7 @@
         <p>ליווי לפי מה שהארגון שלך צריך. אין תשתית? מגדירים יחד מאיפה מתחילים. יש תשתית? ליווי חודשי או פרויקט ממוקד.</p>
       </li>
     </ol>
-    <p class="no-magic"><b>אין דרך אחת, ואין פתרון אחד.</b> התהליך והתוצר מותאמים לארגון שלך, ופעם ברבעון עוצרים יחד לבדוק מה עובד ומה כדאי לשנות.</p>
+    <p class="no-magic"><b>אין דרך אחת, ואין פתרון אחד.</b> התהליך והתוצר מותאמים לארגון שלך, מתוך חשיבה והתבוננות מתמשכת על מה שעובד ועל מה שצריך לשנות.</p>
   </section>
 
   <section class="block scroll-reveal" aria-labelledby="svc-h">
@@ -563,7 +562,7 @@
     <h2 id="close-h">הוא שיחה</h2>
     <p class="sub">בלי פתרון מוכן מראש. רק להבין יחד מה באמת צריך.</p>
 
-    <form name="card-contact" method="POST" data-netlify="true" netlify-honeypot="company-url" id="leadForm" novalidate>
+    <form id='leadForm' method='POST' name='card-contact' novalidate>
       <input type="hidden" name="form-name" value="card-contact">
       <input type="hidden" name="subject" value="פנייה חדשה מהכרטיס הדיגיטלי">
       <p class="hp" aria-hidden="true"><label>לא למילוי <input name="company-url" tabindex="-1" autocomplete="off"></label></p>
@@ -591,7 +590,7 @@
         <textarea id="f-msg" name="message" rows="3"></textarea>
       </div>
       <button class="btn btn-primary" type="submit" id="sendBtn"><svg aria-hidden="true"><use href="#i-send"/></svg>שליחה</button>
-      <p class="privacy">הפרטים משמשים רק כדי לחזור אליך. אין חובה חוקית למסור אותם. <a href="privacy.html">מדיניות הפרטיות</a></p>
+      <p class="privacy">הפרטים משמשים רק כדי לחזור אליך. אין חובה חוקית למסור אותם. <a href='/privacy'>מדיניות הפרטיות</a></p>
       <div class="form-msg" id="formMsg" role="status" aria-live="polite"></div>
     </form>
 
@@ -612,7 +611,7 @@
   <footer class="foot">
     לאה מריס · ייעוץ ארגוני, פיתוח למידה והדרכה<br>
     <a href="tel:+972505700534" dir="ltr">050-570-0534</a> · <a href="mailto:leamaris.od@gmail.com">leamaris.od@gmail.com</a>
-    <nav class="legal" aria-label="מידע משפטי"><a href="privacy.html">מדיניות פרטיות</a> · <a href="accessibility.html">הצהרת נגישות</a></nav>
+    <nav class="legal" aria-label="מידע משפטי"><a href='/privacy'>מדיניות פרטיות</a> · <a href='/accessibility'>הצהרת נגישות</a></nav>
   </footer>
 </main>
 
@@ -760,8 +759,24 @@
       const btn = document.getElementById("sendBtn");
       btn.disabled = true; msg.className = "form-msg"; msg.textContent = "שולחת...";
       try {
-        const res = await fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: new URLSearchParams(new FormData(form)).toString() });
-        if (!res.ok) throw new Error(res.status);
+        const f = form.elements;
+        const res = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "Accept": "application/json" },
+          body: JSON.stringify({
+            access_key: "427bd8bc-b2f7-447c-8a8b-c4619aca3d4e",
+            subject: "פנייה חדשה מהכרטיס הדיגיטלי",
+            from_name: "הכרטיס הדיגיטלי של לאה מריס",
+            name: f["name"].value,
+            phone: f["phone"].value,
+            email: f["email"].value,
+            organization: f["organization"].value,
+            message: f["message"].value,
+            botcheck: f["company-url"].value
+          })
+        });
+        const data = await res.json();
+        if (data.success !== true) throw new Error(data.message || res.status);
         form.reset();
         msg.className = "form-msg ok";
         msg.textContent = "תודה, " + name.split(" ")[0] + "! הפרטים התקבלו, ואחזור אליך בהקדם.";
