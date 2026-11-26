@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>לאה מריס · יועצת ארגונית ומלווה מנהלים</title>
-<meta name="description" content="לאה מריס, ייעוץ ארגוני, פיתוח, למידה והדרכה. לא כל צורך דורש הדרכה: מאבחנת את הבעיה, בונה תוכנית עבודה מותאמת ומלווה ליישום. יותר מ-15 שנות ניסיון במגזר הציבורי והעסקי.">
+<title>לאה מריס · ייעוץ ארגוני, פיתוח למידה והדרכה</title>
+<meta name="description" content="לאה מריס, ייעוץ ארגוני, פיתוח למידה והדרכה. מאבחנת את הבעיה, בונה תוכנית עבודה מותאמת ומלווה ליישום. יותר מ-15 שנות ניסיון במגזר הציבורי והעסקי.">
 <meta name="theme-color" content="#0E1A30">
 <link rel="canonical" href="https://lea-maris-card.netlify.app/">
 <meta property="og:type" content="profile">
 <meta property="og:locale" content="he_IL">
-<meta property="og:title" content="לאה מריס · יועצת ארגונית ומלווה מנהלים">
+<meta property="og:title" content="לאה מריס · ייעוץ ארגוני, פיתוח למידה והדרכה">
 <meta property="og:description" content="מאבחנת את הבעיה, בונה תוכנית עבודה מותאמת ומלווה ליישום.">
 <meta property="og:url" content="https://lea-maris-card.netlify.app/">
 <meta property="og:image" content="https://lea-maris-card.netlify.app/og.jpg">
@@ -20,7 +20,7 @@
 <link rel="apple-touch-icon" href="lea.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700&family=Suez+One&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="lea.webp" type="image/webp">
 <style>
   :root {
@@ -35,8 +35,8 @@
     --text: #0F0E0C;
     --muted: #4A463F;
     --line: #D8D2C4;
-    --serif: "Frank Ruhl Libre", "David Libre", Georgia, serif;
-    --sans: "Heebo", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+    --serif: "Suez One", "Frank Ruhl Libre", Georgia, serif;
+    --sans: "Assistant", "Heebo", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
     --radius: 18px;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -277,6 +277,84 @@
   .foot { text-align: center; padding: 30px 20px 34px; font-size: .8rem; color: var(--muted); }
   .foot .mono { font-family: var(--serif); font-size: 1.1rem; color: var(--gold); letter-spacing: 2px; display: block; margin-bottom: 6px; }
 
+
+  /* ---------- Suez One has a single weight ---------- */
+  h1, h2, h3, .stat b, .steps li::before, .closing h2 { font-weight: 400; }
+  body { font-size: 17px; }
+  .role { margin-top: 6px; font-size: .95rem; font-weight: 600; letter-spacing: .5px; color: var(--gold-text); }
+  .lead { font-family: var(--sans); font-weight: 600; font-size: 1.22rem; color: var(--ink); margin-top: 14px; }
+  .quote p { font-family: var(--sans); font-weight: 500; font-size: 1.06rem; }
+  h2.big { font-size: 1.75rem; line-height: 1.3; }
+  .inline-cta { display: inline-flex; gap: 6px; margin-top: 14px; font-weight: 600; color: var(--gold-text); border-bottom: 1px solid currentColor; padding-bottom: 2px; }
+
+  /* Steps from the carousel */
+  .steps li { padding-bottom: 22px; }
+  .steps h3 { font-family: var(--serif); font-size: 1.2rem; color: var(--ink); line-height: 1.3; }
+  .steps p { font-size: .98rem; color: var(--muted); margin-top: 2px; }
+  .steps li::before { top: 0; }
+  .steps li:not(:last-child)::after { transform-origin: top; transform: scaleY(0); transition: transform .8s ease; }
+  .steps li::before { transform: scale(.4); opacity: 0; transition: transform .5s cubic-bezier(.3, 1.6, .5, 1), opacity .4s ease; }
+  .steps.go li::before { transform: none; opacity: 1; }
+  .steps.go li:not(:last-child)::after { transform: scaleY(1); }
+  .steps.go li:nth-child(2)::before { transition-delay: .35s; } .steps.go li:nth-child(1)::after { transition-delay: .15s; }
+  .steps.go li:nth-child(3)::before { transition-delay: .7s; }  .steps.go li:nth-child(2)::after { transition-delay: .5s; }
+  .steps.go li:nth-child(4)::before { transition-delay: 1.05s; } .steps.go li:nth-child(3)::after { transition-delay: .85s; }
+
+  /* Signature: gold light sweeping over the arch frame */
+  .portrait { overflow: hidden; }
+  .portrait::after {
+    content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
+    background: linear-gradient(115deg, transparent 35%, rgba(255, 240, 205, .55) 48%, rgba(255, 240, 205, 0) 60%);
+    transform: translateX(-120%);
+  }
+  .ready .portrait::after { animation: sweep 1.6s 1s ease-in-out, sweep 1.6s 8s ease-in-out; }
+  @keyframes sweep { to { transform: translateX(120%); } }
+  .hero::after {
+    content: ""; position: absolute; left: 50%; top: 52%; width: 340px; height: 340px; margin: -170px 0 0 -170px;
+    border-radius: 50%; border: 1px solid rgba(229, 200, 138, .28); z-index: -1;
+    box-shadow: 0 0 0 28px rgba(229, 200, 138, .04), 0 0 0 60px rgba(229, 200, 138, .025);
+  }
+  .ready .hero::after { animation: halo 7s ease-in-out infinite; }
+  @keyframes halo { 50% { transform: scale(1.06); opacity: .6; } }
+
+  /* Hand-drawn gold underline on the key word */
+  em.draw { font-style: normal; color: var(--gold); position: relative; white-space: nowrap; }
+  em.draw::after {
+    content: ""; position: absolute; right: 0; left: 0; bottom: -4px; height: 8px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 8' preserveAspectRatio='none'%3E%3Cpath d='M2 5.5C25 2 60 1.5 98 4' fill='none' stroke='%238C6F3C' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat right / 100% 100%;
+    clip-path: inset(0 0 0 100%); transition: clip-path .9s .3s ease;
+  }
+  .in-view em.draw::after { clip-path: inset(0 0 0 0); }
+
+  /* Contact form */
+  .closing { text-align: right; }
+  .closing .kicker { text-align: center; color: var(--gold-text); font-weight: 600; margin-bottom: 0; }
+  .closing h2 { text-align: center; font-size: 2rem; margin-bottom: 4px; }
+  .closing .sub { text-align: center; margin-bottom: 20px; }
+  #leadForm { display: grid; gap: 12px; }
+  .field { display: grid; gap: 4px; }
+  .field label { font-weight: 600; font-size: .95rem; color: var(--ink); }
+  .field label span { color: var(--gold-text); }
+  .field input, .field textarea {
+    font: inherit; font-size: 1rem; color: var(--text);
+    background: var(--white); border: 1px solid var(--line); border-radius: 12px;
+    padding: 12px 14px; min-height: 48px; width: 100%;
+    transition: border-color .2s ease, box-shadow .2s ease;
+  }
+  .field input[dir="ltr"] { text-align: right; }
+  .field textarea { resize: vertical; min-height: 84px; }
+  .field input:focus, .field textarea:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(140, 111, 60, .18); }
+  .field [aria-invalid="true"] { border-color: #A33A2B; }
+  .err { color: #A33A2B; font-size: .85rem; min-height: 0; }
+  .hp { position: absolute; right: -9999px; }
+  .privacy { font-size: .82rem; color: var(--muted); text-align: center; }
+  .form-msg { text-align: center; font-weight: 600; }
+  .form-msg.ok { background: var(--white); border: 1px solid var(--gold); border-radius: 14px; padding: 16px; color: var(--ink); }
+  .form-msg.bad { color: #A33A2B; }
+  #sendBtn[disabled] { opacity: .6; pointer-events: none; }
+  .or { display: flex; align-items: center; gap: 12px; margin: 18px 0 14px; color: var(--muted); font-size: .9rem; }
+  .or::before, .or::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+
   /* ---------- Dialog (QR + share) ---------- */
   dialog {
     border: 0; padding: 0; margin: auto;
@@ -316,6 +394,8 @@
   .scroll-reveal.in-view { opacity: 1; transform: none; transition: opacity .7s ease, transform .7s cubic-bezier(.2, .7, .2, 1); }
   .scroll-reveal { opacity: 0; transform: translateY(22px); }
   @media (prefers-reduced-motion: reduce) {
+    .steps li::before, .steps li::after { transform: none !important; opacity: 1 !important; }
+    em.draw::after { clip-path: none !important; }
     *, *::before, *::after { animation: none !important; transition: none !important; }
     .reveal, .scroll-reveal { opacity: 1; transform: none; }
   }
@@ -346,18 +426,20 @@
     <symbol id="i-team" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
     <symbol id="i-spark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/><path d="M12 7.5 13.4 10.6 16.5 12l-3.1 1.4L12 16.5l-1.4-3.1L7.5 12l3.1-1.4z"/></symbol>
     <symbol id="i-route" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="2.5"/><circle cx="18" cy="5" r="2.5"/><path d="M8.5 19H17a3.5 3.5 0 0 0 0-7H7a3.5 3.5 0 0 1 0-7h8.5"/></symbol>
+    <symbol id="i-send" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 3 10.5 13.5M21 3l-6.5 18-4-7.5L3 9.5 21 3Z"/></symbol>
   </defs>
 </svg>
 
 <main class="card" id="top">
   <header class="hero">
     <div class="portrait">
-      <img src="lea.webp" width="480" height="600" alt="לאה מריס, יועצת ארגונית ומלווה מנהלים" fetchpriority="high">
+      <img src="lea.webp" width="480" height="600" alt="לאה מריס" fetchpriority="high">
     </div>
   </header>
 
   <div class="identity">
     <h1 class="reveal" style="--d:2">לאה מריס</h1>
+    <p class="role reveal" style="--d:3">ייעוץ ארגוני, פיתוח למידה והדרכה</p>
     <p class="lead reveal" style="--d:4">מאבחנת את הבעיה, בונה תוכנית עבודה מותאמת ומלווה ליישום</p>
   </div>
 
@@ -368,7 +450,7 @@
     <a class="q reveal" style="--d:6" href="tel:+972505700534" aria-label="חיוג: 050-570-0534">
       <span class="ic"><svg aria-hidden="true"><use href="#i-phone"/></svg></span>חיוג
     </a>
-    <a class="q reveal" style="--d:7" href="mailto:leamaris.od@gmail.com" aria-label="מייל: leamaris.od@gmail.com">
+    <a class="q reveal" style="--d:7" href="mailto:leamaris.od@gmail.com" id="mailBtn" aria-label="מייל: leamaris.od@gmail.com" aria-haspopup="dialog">
       <span class="ic"><svg aria-hidden="true"><use href="#i-mail"/></svg></span>מייל
     </a>
     <a class="q reveal" style="--d:8" href="https://lea-maris-ai-consulting.lovable.app/" target="_blank" rel="noopener" aria-label="לאתר (נפתח בחלון חדש)">
@@ -380,18 +462,17 @@
     <a class="btn btn-primary reveal" style="--d:9" href="lea-maris.vcf" download="לאה מריס.vcf">
       <svg aria-hidden="true"><use href="#i-user"/></svg>שמירה באנשי הקשר
     </a>
-    <a class="btn btn-ghost reveal" style="--d:10" href="https://wa.me/972505700534?text=%D7%94%D7%99%D7%99%20%D7%9C%D7%90%D7%94%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%AA%D7%90%D7%9D%20%D7%A9%D7%99%D7%97%D7%AA%20%D7%94%D7%99%D7%9B%D7%A8%D7%95%D7%AA%20%D7%A9%D7%9C%2030%20%D7%93%D7%A7%D7%95%D7%AA" target="_blank" rel="noopener">
+    <a class="btn btn-ghost reveal" style="--d:10" href="#contact" id="bookBtn">
       <svg aria-hidden="true"><use href="#i-cal"/></svg>לתיאום שיחת היכרות
     </a>
   </div>
 
   <section class="block about scroll-reveal" aria-labelledby="about-h">
     <p class="eyebrow">נעים להכיר</p>
-    <p class="kicker">אחרי יותר מ-15 שנה בלמידה והדרכה, למדתי:</p>
-    <h2 id="about-h" class="big">לא כל צורך דורש <em>הדרכה.</em></h2>
-    <p>אני לאה מריס. כבר יותר מ-15 שנה אני עוסקת בלמידה, הדרכה ופיתוח ארגוני, במגזר הציבורי ובמגזר העסקי.</p>
-    <p>ארגונים רבים משקיעים בהדרכות זמן, כסף ומשאבים. אבל מה קורה אחרי? איך יודעים אם משהו באמת השתנה, ואם ההשקעה הייתה נכונה מלכתחילה?</p>
-    <p>לפעמים התשובה היא קורס, ולפעמים דווקא ליווי, חניכה, התנסות, שינוי בתהליך או שיחה נכונה. לכן, לפני שמשקיעים בעוד הדרכה, אני מתחילה בשלב שלא מעט ארגונים מדלגים עליו: <strong>להבין מה באמת צריך להשתנות.</strong></p>
+    <h2 id="about-h" class="big">הדבר הכי <em class="draw">יקר</em> בלמידה ארגונית הוא פתרון שלא ענה על הצורך.</h2>
+    <p>אני רואה את זה כל הזמן: משקיעים זמן, כסף ואנרגיה, אבל בפועל שום דבר לא קורה.</p>
+    <p>לכן הדבר הראשון שאני בודקת הוא מה קורה בארגון שלך, מה כבר קיים ומה רוצים שיהיה, ו<strong>מה יעבוד אצלך בפועל</strong>. משם ממשיכים יחד, יד ביד 🤝</p>
+    <a class="inline-cta" href="#contact">אם זה מדבר אליך, אשמח לשמוע ממך <span aria-hidden="true">👇</span></a>
   </section>
 
   <div class="stats scroll-reveal" role="list" aria-label="במספרים">
@@ -401,15 +482,27 @@
   </div>
 
   <section class="block scroll-reveal" aria-labelledby="way-h">
-    <p class="eyebrow">איך אני עובדת</p>
-    <h2 id="way-h">תמיד מתחילים באבחון</h2>
-    <ol class="steps">
-      <li><b>מבינים יחד</b> מה קורה בארגון</li>
-      <li><b>מזהים את הפער</b> ומה באמת צריך להשתנות</li>
-      <li><b>בוחנים אפשרויות</b> ובוחרים את המענה שמתאים לצורך ולמציאות שלכם</li>
-      <li><b>מתקדמים שלב אחר שלב</b>, עד ליישום בשטח</li>
+    <p class="eyebrow">איך זה עובד</p>
+    <h2 id="way-h">בונים את הדרך יחד</h2>
+    <ol class="steps" id="steps">
+      <li>
+        <h3>מקשיבים</h3>
+        <p>הכול מתחיל בשיחת היכרות: מה מטריד אותך, ומה כבר קיים אצלך. בסוף השיחה יש הצעה ברורה לאבחון.</p>
+      </li>
+      <li>
+        <h3>ממפים את הצורך</h3>
+        <p>אבחון ממוקד של 2 עד 3 שבועות: שיחות עם ההנהלה ושאלון קצר לעובדים. בסוף: דו"ח פערים ופגישת המלצות.</p>
+      </li>
+      <li>
+        <h3>מה הכי יישומי</h3>
+        <p>בוחרים יחד את הדרך: קורס, ליווי, התנסות או שינוי בתהליך. בוחרים את מה שיעבוד אצלך.</p>
+      </li>
+      <li>
+        <h3>יד ביד</h3>
+        <p>ליווי לפי מה שהארגון שלך צריך. אין תשתית? מגדירים יחד מאיפה מתחילים. יש תשתית? ליווי חודשי או פרויקט ממוקד.</p>
+      </li>
     </ol>
-    <p class="no-magic">אין קסמים ואין פתרון של יום אחד. יש אבחון, חשיבה משותפת ותהליך, <b>ואתם לא עוברים אותו לבד.</b></p>
+    <p class="no-magic"><b>אין דרך אחת, ואין פתרון אחד.</b> התהליך והתוצר מותאמים לארגון שלך, ופעם ברבעון עוצרים יחד לבדוק מה עובד ומה כדאי לשנות.</p>
   </section>
 
   <section class="block scroll-reveal" aria-labelledby="svc-h">
@@ -422,11 +515,11 @@
       </li>
       <li class="svc">
         <span class="ic"><svg aria-hidden="true"><use href="#i-route"/></svg></span>
-        <div><h3>תהליכי למידה ופיתוח מותאמים</h3><p>למנהלים ולעובדים, לפי הצורך והמציאות של הארגון.</p></div>
+        <div><h3>תהליכי למידה ופיתוח מותאמים</h3><p>למנהלים ולעובדים, לפי הצורך והמציאות של הארגון שלך.</p></div>
       </li>
       <li class="svc">
         <span class="ic"><svg aria-hidden="true"><use href="#i-team"/></svg></span>
-        <div><h3>מערך למידה והדרכה מלא</h3><p>לארגונים בלי יחידת למידה.</p></div>
+        <div><h3>מערך למידה והדרכה מלא</h3><p>לארגון בלי יחידת למידה.</p></div>
       </li>
       <li class="svc">
         <span class="ic"><svg aria-hidden="true"><use href="#i-spark"/></svg></span>
@@ -443,7 +536,7 @@
   </section>
 
   <section class="block scroll-reveal" aria-labelledby="links-h">
-    <p class="eyebrow">בואו נמשיך להכיר</p>
+    <p class="eyebrow">נמשיך להכיר</p>
     <h2 id="links-h" class="sr-only">קישורים</h2>
     <div class="links">
       <a class="link" href="https://www.linkedin.com/in/lea-maris-9131b94a" target="_blank" rel="noopener">
@@ -461,11 +554,46 @@
     </div>
   </section>
 
-  <section class="closing scroll-reveal" aria-labelledby="close-h">
-    <h2 id="close-h">נתחיל בשיחת היכרות</h2>
-    <p>נבין יחד מה קורה אצלך ומה ייתן את התוצאה הכי גדולה.</p>
-    <a class="btn btn-primary" href="https://wa.me/972505700534?text=%D7%94%D7%99%D7%99%20%D7%9C%D7%90%D7%94%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%AA%D7%90%D7%9D%20%D7%A9%D7%99%D7%97%D7%AA%20%D7%94%D7%99%D7%9B%D7%A8%D7%95%D7%AA%20%D7%A9%D7%9C%2030%20%D7%93%D7%A7%D7%95%D7%AA" target="_blank" rel="noopener">
-      <svg aria-hidden="true"><use href="#i-wa"/></svg>כתבו לי בוואטסאפ
+  <section class="closing scroll-reveal" id="contact" aria-labelledby="close-h" tabindex="-1">
+    <p class="kicker">הצעד הראשון</p>
+    <h2 id="close-h">הוא שיחה</h2>
+    <p class="sub">בלי פתרון מוכן מראש. רק להבין יחד מה באמת צריך.</p>
+
+    <form name="card-contact" method="POST" data-netlify="true" netlify-honeypot="company-url" id="leadForm" novalidate>
+      <input type="hidden" name="form-name" value="card-contact">
+      <input type="hidden" name="subject" value="פנייה חדשה מהכרטיס הדיגיטלי">
+      <p class="hp" aria-hidden="true"><label>לא למילוי <input name="company-url" tabindex="-1" autocomplete="off"></label></p>
+      <div class="field">
+        <label for="f-name">שם מלא <span aria-hidden="true">*</span></label>
+        <input id="f-name" name="name" type="text" autocomplete="name" required aria-describedby="e-name">
+        <span class="err" id="e-name"></span>
+      </div>
+      <div class="field">
+        <label for="f-phone">טלפון <span aria-hidden="true">*</span></label>
+        <input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" dir="ltr" required aria-describedby="e-phone">
+        <span class="err" id="e-phone"></span>
+      </div>
+      <div class="field">
+        <label for="f-email">מייל</label>
+        <input id="f-email" name="email" type="email" autocomplete="email" dir="ltr" aria-describedby="e-email">
+        <span class="err" id="e-email"></span>
+      </div>
+      <div class="field">
+        <label for="f-org">ארגון ותפקיד</label>
+        <input id="f-org" name="organization" type="text" autocomplete="organization">
+      </div>
+      <div class="field">
+        <label for="f-msg">במה אוכל לעזור?</label>
+        <textarea id="f-msg" name="message" rows="3"></textarea>
+      </div>
+      <button class="btn btn-primary" type="submit" id="sendBtn"><svg aria-hidden="true"><use href="#i-send"/></svg>שליחה</button>
+      <p class="privacy">הפרטים משמשים רק כדי לחזור אליך.</p>
+      <div class="form-msg" id="formMsg" role="status" aria-live="polite"></div>
+    </form>
+
+    <div class="or"><span>או</span></div>
+    <a class="btn btn-ghost" href="https://wa.me/972505700534?text=%D7%94%D7%99%D7%99%20%D7%9C%D7%90%D7%94%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%AA%D7%90%D7%9D%20%D7%A9%D7%99%D7%97%D7%AA%20%D7%94%D7%99%D7%9B%D7%A8%D7%95%D7%AA" target="_blank" rel="noopener">
+      <svg aria-hidden="true"><use href="#i-wa"/></svg>לשיחה בוואטסאפ
     </a>
   </section>
 
@@ -475,15 +603,29 @@
   </div>
 
   <footer class="foot">
-    לאה מריס · ייעוץ ארגוני, פיתוח, למידה והדרכה<br>
+    לאה מריס · ייעוץ ארגוני, פיתוח למידה והדרכה<br>
     <a href="tel:+972505700534" dir="ltr">050-570-0534</a> · <a href="mailto:leamaris.od@gmail.com">leamaris.od@gmail.com</a>
   </footer>
 </main>
 
+<dialog id="mailDlg" aria-labelledby="mail-h">
+  <div class="dlg">
+    <button class="close" type="button" data-close aria-label="סגירה"><svg aria-hidden="true"><use href="#i-x"/></svg></button>
+    <h2 id="mail-h">שליחת מייל</h2>
+    <p dir="ltr">leamaris.od@gmail.com</p>
+    <div class="btns" style="margin-top:18px">
+      <a class="btn btn-primary" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=leamaris.od@gmail.com&amp;su=%D7%A4%D7%A0%D7%99%D7%99%D7%94%20%D7%9E%D7%94%D7%9B%D7%A8%D7%98%D7%99%D7%A1%20%D7%94%D7%93%D7%99%D7%92%D7%99%D7%98%D7%9C%D7%99" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-mail"/></svg>כתיבה ב-Gmail</a>
+      <a class="btn btn-ghost" href="mailto:leamaris.od@gmail.com?subject=%D7%A4%D7%A0%D7%99%D7%99%D7%94%20%D7%9E%D7%94%D7%9B%D7%A8%D7%98%D7%99%D7%A1%20%D7%94%D7%93%D7%99%D7%92%D7%99%D7%98%D7%9C%D7%99"><svg aria-hidden="true"><use href="#i-send"/></svg>אפליקציית המייל בטלפון</a>
+      <button class="btn btn-ghost" type="button" id="copyMail"><svg aria-hidden="true"><use href="#i-link"/></svg>העתקת הכתובת</button>
+      <a class="btn btn-ghost" href="#contact" data-close><svg aria-hidden="true"><use href="#i-user"/></svg>השארת פרטים בטופס</a>
+    </div>
+  </div>
+</dialog>
+
 <dialog id="qrDlg" aria-labelledby="qr-h">
   <div class="dlg">
     <button class="close" type="button" data-close aria-label="סגירה"><svg aria-hidden="true"><use href="#i-x"/></svg></button>
-    <h2 id="qr-h">סרקו ושמרו</h2>
+    <h2 id="qr-h">סריקה ושמירה</h2>
     <p>מכוונים את מצלמת הטלפון לקוד</p>
     <div class="qr" id="qrBox" role="img" aria-label="קוד QR לכרטיס הדיגיטלי"></div>
     <div class="btns">
@@ -508,7 +650,9 @@
   ];
 
   const URL_CARD = location.protocol.startsWith("http") ? location.origin + location.pathname : "https://lea-maris-card.netlify.app/";
-  const SHARE_TEXT = "הכרטיס הדיגיטלי של לאה מריס, יועצת ארגונית ומלווה מנהלים";
+  const SHARE_TEXT = "הכרטיס הדיגיטלי של לאה מריס, ייעוץ ארגוני, פיתוח למידה והדרכה";
+  /* יומן גוגל: מדביקים כאן את קישור דף ההזמנות (Appointment schedule), והכפתור "לתיאום שיחת היכרות" יפתח אותו */
+  const BOOKING_URL = "";
 
   document.addEventListener("DOMContentLoaded", () => {
     requestAnimationFrame(() => document.body.classList.add("ready"));
@@ -546,7 +690,7 @@
     };
     const copy = async () => {
       try { await navigator.clipboard.writeText(URL_CARD); toast("הקישור הועתק"); }
-      catch { prompt("העתיקו את הקישור:", URL_CARD); }
+      catch { prompt("העתקת הקישור:", URL_CARD); }
     };
 
     const dlg = document.getElementById("qrDlg");
@@ -564,6 +708,58 @@
     document.getElementById("qrBtn").addEventListener("click", openQr);
     document.getElementById("copyBtn").addEventListener("click", copy);
     dlg.addEventListener("click", (e) => { if (e.target === dlg || e.target.closest("[data-close]")) dlg.close(); });
+
+    // Booking: Google Calendar page when set, otherwise the contact form
+    const book = document.getElementById("bookBtn");
+    if (BOOKING_URL) { book.href = BOOKING_URL; book.target = "_blank"; book.rel = "noopener"; }
+
+    // Steps timeline draws when it comes into view
+    const steps = document.getElementById("steps");
+    if ("IntersectionObserver" in window) {
+      const so = new IntersectionObserver((en) => { if (en[0].isIntersecting) { steps.classList.add("go"); so.disconnect(); } }, { threshold: 0.3 });
+      so.observe(steps);
+    } else { steps.classList.add("go"); }
+
+    // Mail: a chooser, because a bare mailto does nothing on computers without a mail app
+    const mailDlg = document.getElementById("mailDlg");
+    document.getElementById("mailBtn").addEventListener("click", (e) => { e.preventDefault(); mailDlg.showModal(); });
+    mailDlg.addEventListener("click", (e) => { if (e.target === mailDlg || e.target.closest("[data-close]")) mailDlg.close(); });
+    document.getElementById("copyMail").addEventListener("click", async () => {
+      try { await navigator.clipboard.writeText("leamaris.od@gmail.com"); toast("הכתובת הועתקה"); }
+      catch { prompt("העתקת הכתובת:", "leamaris.od@gmail.com"); }
+    });
+
+    // Contact form: Netlify Forms, with an email notification to Lea
+    const form = document.getElementById("leadForm");
+    const msg = document.getElementById("formMsg");
+    const setErr = (id, text) => {
+      const input = document.getElementById("f-" + id);
+      document.getElementById("e-" + id).textContent = text;
+      input.setAttribute("aria-invalid", text ? "true" : "false");
+      return !text;
+    };
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const name = form.name.value.trim(), phone = form.phone.value.replace(/[^\d+]/g, ""), email = form.email.value.trim();
+      const ok = [
+        setErr("name", name.length < 2 ? "יש להזין שם מלא" : ""),
+        setErr("phone", phone.replace("+972", "0").length < 9 ? "יש להזין מספר טלפון תקין" : ""),
+        setErr("email", email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) ? "יש להזין כתובת מייל תקינה" : "")
+      ].every(Boolean);
+      if (!ok) { form.querySelector('[aria-invalid="true"]').focus(); return; }
+      const btn = document.getElementById("sendBtn");
+      btn.disabled = true; msg.className = "form-msg"; msg.textContent = "שולחת...";
+      try {
+        const res = await fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: new URLSearchParams(new FormData(form)).toString() });
+        if (!res.ok) throw new Error(res.status);
+        form.reset();
+        msg.className = "form-msg ok";
+        msg.textContent = "תודה, " + name.split(" ")[0] + "! הפרטים התקבלו, ואחזור אליך בהקדם.";
+      } catch {
+        msg.className = "form-msg bad";
+        msg.textContent = "משהו השתבש בשליחה. אפשר לנסות שוב, או לכתוב לי בוואטסאפ.";
+      } finally { btn.disabled = false; }
+    });
 
     document.getElementById("shareBtn").addEventListener("click", async () => {
       if (navigator.share) {
