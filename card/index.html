@@ -54,6 +54,7 @@
   a { color: inherit; text-decoration: none; }
   button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
   :focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 8px; }
+  [hidden] { display: none !important; }
   .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
   svg { width: 22px; height: 22px; flex: none; }
 
@@ -348,6 +349,8 @@
   .err { color: #A33A2B; font-size: .85rem; min-height: 0; }
   .hp { position: absolute; right: -9999px; }
   .privacy { font-size: .82rem; color: var(--muted); text-align: center; }
+  .privacy a, .legal a { text-decoration: underline; text-underline-offset: 3px; }
+  .legal { margin-top: 10px; font-size: .82rem; }
   .form-msg { text-align: center; font-weight: 600; }
   .form-msg.ok { background: var(--white); border: 1px solid var(--gold); border-radius: 14px; padding: 16px; color: var(--ink); }
   .form-msg.bad { color: #A33A2B; }
@@ -462,7 +465,7 @@
     <a class="btn btn-primary reveal" style="--d:9" href="lea-maris.vcf" download="לאה מריס.vcf">
       <svg aria-hidden="true"><use href="#i-user"/></svg>שמירה באנשי הקשר
     </a>
-    <a class="btn btn-ghost reveal" style="--d:10" href="#contact" id="bookBtn">
+    <a class="btn btn-ghost reveal" style="--d:10" href="#contact" id="bookBtn" data-book>
       <svg aria-hidden="true"><use href="#i-cal"/></svg>לתיאום שיחת היכרות
     </a>
   </div>
@@ -587,11 +590,14 @@
         <textarea id="f-msg" name="message" rows="3"></textarea>
       </div>
       <button class="btn btn-primary" type="submit" id="sendBtn"><svg aria-hidden="true"><use href="#i-send"/></svg>שליחה</button>
-      <p class="privacy">הפרטים משמשים רק כדי לחזור אליך.</p>
+      <p class="privacy">הפרטים משמשים רק כדי לחזור אליך. אין חובה חוקית למסור אותם. <a href="privacy.html">מדיניות הפרטיות</a></p>
       <div class="form-msg" id="formMsg" role="status" aria-live="polite"></div>
     </form>
 
     <div class="or"><span>או</span></div>
+    <a class="btn btn-ghost" href="#contact" data-book hidden style="margin-bottom:10px">
+      <svg aria-hidden="true"><use href="#i-cal"/></svg>קביעת שיחה ישירות ביומן
+    </a>
     <a class="btn btn-ghost" href="https://wa.me/972505700534?text=%D7%94%D7%99%D7%99%20%D7%9C%D7%90%D7%94%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%AA%D7%90%D7%9D%20%D7%A9%D7%99%D7%97%D7%AA%20%D7%94%D7%99%D7%9B%D7%A8%D7%95%D7%AA" target="_blank" rel="noopener">
       <svg aria-hidden="true"><use href="#i-wa"/></svg>לשיחה בוואטסאפ
     </a>
@@ -605,6 +611,7 @@
   <footer class="foot">
     לאה מריס · ייעוץ ארגוני, פיתוח למידה והדרכה<br>
     <a href="tel:+972505700534" dir="ltr">050-570-0534</a> · <a href="mailto:leamaris.od@gmail.com">leamaris.od@gmail.com</a>
+    <nav class="legal" aria-label="מידע משפטי"><a href="privacy.html">מדיניות פרטיות</a> · <a href="accessibility.html">הצהרת נגישות</a></nav>
   </footer>
 </main>
 
@@ -652,7 +659,7 @@
   const URL_CARD = location.protocol.startsWith("http") ? location.origin + location.pathname : "https://lea-maris-card.netlify.app/";
   const SHARE_TEXT = "הכרטיס הדיגיטלי של לאה מריס, ייעוץ ארגוני, פיתוח למידה והדרכה";
   /* יומן גוגל: מדביקים כאן את קישור דף ההזמנות (Appointment schedule), והכפתור "לתיאום שיחת היכרות" יפתח אותו */
-  const BOOKING_URL = "";
+  const BOOKING_URL = "https://calendar.app.google/wpYhUovYzBncEbcV6";
 
   document.addEventListener("DOMContentLoaded", () => {
     requestAnimationFrame(() => document.body.classList.add("ready"));
@@ -711,7 +718,9 @@
 
     // Booking: Google Calendar page when set, otherwise the contact form
     const book = document.getElementById("bookBtn");
-    if (BOOKING_URL) { book.href = BOOKING_URL; book.target = "_blank"; book.rel = "noopener"; }
+    if (BOOKING_URL) {
+      document.querySelectorAll("[data-book]").forEach((a) => { a.href = BOOKING_URL; a.target = "_blank"; a.rel = "noopener"; a.setAttribute("aria-label", a.textContent.trim() + " (נפתח בחלון חדש)"); a.hidden = false; });
+    }
 
     // Steps timeline draws when it comes into view
     const steps = document.getElementById("steps");
