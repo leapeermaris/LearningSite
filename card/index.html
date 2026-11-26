@@ -221,6 +221,23 @@
   .svc h3 { font-family: var(--serif); font-size: 1.12rem; font-weight: 700; color: var(--ink); line-height: 1.3; }
   .svc p { font-size: .93rem; color: var(--muted); line-height: 1.55; margin-top: 3px; }
 
+  .kicker { font-size: .95rem; color: var(--muted); margin-bottom: 4px; }
+  h2.big { font-size: 2.1rem; line-height: 1.15; margin-bottom: 14px; }
+  h2.big em { font-style: normal; color: var(--gold); }
+  .way-intro { font-size: 1.02rem; margin-bottom: 18px; }
+  .steps { list-style: none; counter-reset: st; display: grid; gap: 0; position: relative; }
+  .steps li { counter-increment: st; position: relative; padding: 0 52px 18px 0; font-size: 1rem; line-height: 1.55; }
+  .steps li::before {
+    content: counter(st); position: absolute; right: 0; top: -2px;
+    width: 34px; height: 34px; border-radius: 50%;
+    display: grid; place-items: center;
+    background: var(--ink); color: var(--gold-light);
+    font-family: var(--serif); font-weight: 700; font-size: 1rem;
+  }
+  .steps li:not(:last-child)::after { content: ""; position: absolute; right: 16.5px; top: 34px; bottom: 0; width: 1px; background: var(--gold); opacity: .5; }
+  .steps b { color: var(--ink); font-weight: 700; }
+  .no-magic { margin-top: 6px; padding: 16px 18px; background: var(--cream); border-radius: 14px; border-inline-start: 3px solid var(--gold); font-size: .98rem; }
+  .no-magic b { color: var(--ink); font-weight: 700; }
   .quotes { display: grid; gap: 12px; }
   .quote { background: var(--cream); border-radius: var(--radius); padding: 20px 18px 16px; border-inline-start: 3px solid var(--gold); }
   .quote p { font-family: var(--serif); font-size: 1.08rem; line-height: 1.6; color: var(--ink); }
@@ -382,25 +399,39 @@
     <div class="stat" role="listitem"><b>2</b><span>מגזרים: ציבורי ועסקי</span></div>
   </div>
 
+  <section class="block scroll-reveal" aria-labelledby="way-h">
+    <p class="eyebrow">איך אני עובדת</p>
+    <p class="kicker">אחרי יותר מ-15 שנה בלמידה והדרכה, למדתי:</p>
+    <h2 id="way-h" class="big">לא כל צורך דורש <em>הדרכה.</em></h2>
+    <p class="way-intro">לפעמים התשובה היא קורס, ולפעמים דווקא ליווי, חניכה, התנסות, שינוי בתהליך או שיחה נכונה. לכן אני תמיד מתחילה באבחון.</p>
+    <ol class="steps">
+      <li><b>מבינים יחד</b> מה קורה בארגון</li>
+      <li><b>מזהים את הפער</b> ומה באמת צריך להשתנות</li>
+      <li><b>בוחנים אפשרויות</b> ובוחרים את המענה שמתאים לצורך ולמציאות שלכם</li>
+      <li><b>מתקדמים שלב אחר שלב</b>, עד ליישום בשטח</li>
+    </ol>
+    <p class="no-magic">אין קסמים ואין פתרון של יום אחד. יש אבחון, חשיבה משותפת ותהליך, <b>ואתם לא עוברים אותו לבד.</b></p>
+  </section>
+
   <section class="block scroll-reveal" aria-labelledby="svc-h">
-    <p class="eyebrow">איך אני עוזרת</p>
+    <p class="eyebrow">מה אני מביאה לארגון</p>
     <h2 id="svc-h">מה עושים יחד</h2>
     <ul class="services">
       <li class="svc">
         <span class="ic"><svg aria-hidden="true"><use href="#i-compass"/></svg></span>
-        <div><h3>ליווי מנהלים</h3><p>שיטות עבודה שמחזירות לך שליטה על היום, וביטחון בקבלת החלטות.</p></div>
-      </li>
-      <li class="svc">
-        <span class="ic"><svg aria-hidden="true"><use href="#i-team"/></svg></span>
-        <div><h3>פיתוח צוות שלוקח אחריות</h3><p>שגרות עבודה ותקשורת שמחזיקות את הצוות גם כשאת או אתה לא בחדר.</p></div>
-      </li>
-      <li class="svc">
-        <span class="ic"><svg aria-hidden="true"><use href="#i-spark"/></svg></span>
-        <div><h3>בינה מלאכותית בעבודה הניהולית</h3><p>כלים וסוכני AI מותאמים לתעדוף, לקבלת החלטות ולהכנה לשיחות מורכבות.</p></div>
+        <div><h3>אבחון צרכים ופערים</h3><p>ארגוניים ומקצועיים. מבינים מה באמת צריך להשתנות, לפני שמשקיעים.</p></div>
       </li>
       <li class="svc">
         <span class="ic"><svg aria-hidden="true"><use href="#i-route"/></svg></span>
-        <div><h3>פיתוח ארגוני ותהליכי שינוי</h3><p>אבחון, תכנון והובלה של שינוי, מההנהלה ועד השטח.</p></div>
+        <div><h3>תהליכי למידה ופיתוח מותאמים</h3><p>למנהלים ולעובדים, לפי הצורך והמציאות של הארגון.</p></div>
+      </li>
+      <li class="svc">
+        <span class="ic"><svg aria-hidden="true"><use href="#i-team"/></svg></span>
+        <div><h3>מערך למידה והדרכה מלא</h3><p>לארגונים בלי יחידת למידה.</p></div>
+      </li>
+      <li class="svc">
+        <span class="ic"><svg aria-hidden="true"><use href="#i-spark"/></svg></span>
+        <div><h3>ליווי והטמעה</h3><p>עד ליישום בשטח, לא רק עד סוף ההדרכה.</p></div>
       </li>
     </ul>
   </section>
@@ -476,7 +507,13 @@
 <script>
   /* המלצות: להוסיף רק ציטוטים אמיתיים, באישור הממליץ.
      דוגמה: { quote: "טקסט ההמלצה", name: "שם", role: "תפקיד, ארגון" } */
-  const TESTIMONIALS = [];
+  const TESTIMONIALS = [
+    {
+      quote: "יישר כח על העשייה שלך למעננו העובדים. תודה על העזרה לעובדים בארגון להתקדם ולהתפתח מקצועית ואישית, מה שיוביל לתרומה משמעותית יותר לארגון שבו אנו עובדים. מעריך מאוד והמון תודה!",
+      name: "עובד בארגון",
+      role: "מתוך מכתב תודה"
+    }
+  ];
 
   const URL_CARD = location.protocol.startsWith("http") ? location.origin + location.pathname : "https://lea-maris-card.netlify.app/";
   const SHARE_TEXT = "הכרטיס הדיגיטלי של לאה מריס, יועצת ארגונית ומלווה מנהלים";
